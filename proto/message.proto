@@ -1,0 +1,16 @@
+syntax = "proto3";
+package proto;
+import "gogo.proto";
+
+option(gogoproto.sizer_all) = true;
+
+enum MessageType {
+    MsgHeartbeat = 0;
+    MsgContent   = 1;
+}
+
+message Message {
+     MessageType type = 1;
+     bytes       context =2;
+
+}
